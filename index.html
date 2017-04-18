@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW4</title>
+    <script src="jquery-3.2.1.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <style>
+      #sun {
+        position: fixed;
+        top: 50px;
+        left: 60px;
+      }
+      #moon {
+        position: fixed;
+        top: 50px;
+        left: 60px;
+      }
+      #cloud {
+        position: fixed;
+        top: 60px;
+        left: 300px;
+      }
+      #star {
+        position: fixed;
+        top: 50px;
+        left: 250px;
+      }
+      #tree {
+        position: fixed;
+        top: 300px;
+        left: 70px;
+      }
+      #owl {
+        position: fixed;
+        top: 370px;
+        left:120px;
+      }
+      #acorn {
+        position: fixed;
+        top: 510px;
+        left:280px;
+      }
+      #squirrel {
+        position: fixed;
+        top: 470px;
+        left:290px;
+      }
+      #grass {
+        position: fixed;
+        top: 450px;
+        left:300px;
+      }
+      #cow {
+        position: fixed;
+        top: 420px;
+        left:600px;
+      }
+      #eagle {
+        position: fixed;
+        top: 150px;
+        left:550px;
+      }
+      #buttonPo {
+        position: fixed;
+        top: 600px;
+        left:50px;
+      }
+    </style>
+    <script>
+
+      $(document).ready(function() {$('#sun').hide();})
+      $(document).ready(function() {$('#cloud').hide();})
+      $(document).ready(function() {$('#squirrel').hide();})
+      $(document).ready(function() {$('#eagle').hide();})
+      $(document).ready(function() {$('#cow').hide();})
+      $(document).ready(function() {$('#button1').hide();})
+      function A1(){
+        $('#moon').fadeTo(4000,0);
+        $('#sun').show("slide",{distance:350},5000);
+        $('#cloud').fadeToggle(5000);
+        $('#star').fadeTo(1500,0);
+        $('#owl').hide("shake", {times: 4, distance: 5},1500);
+        $('#cow').slideDown(1000).animate({left:"450px"},3000);
+        $('#eagle').fadeIn(10).animate({top:"260px",left:"410px"},1000,'easeInQuart').animate({top:"150px",left:"210px"},1500,'easeInQuart').fadeOut(3000);
+        $('#acorn').toggle(1000);
+        $('#squirrel').slideToggle().slideUp(100);
+        $('#button').slideUp(0);
+        $('#button1').slideDown(1000);
+      }
+    </script>
+</head>
+
+<body>
+  <div>
+    <div1 id='sun'><img src="sun.png" width="150" height="150"></div1>
+    <div1 id='moon'><img src="moon.png" width="150" height="150"></div1>
+    <div1 id='star'><img src="star.png" width="50" height="50"></div1>
+    <div1 id='cloud'><img src="cloud.png" width="300" height="120"></div1>
+    <div1 id='tree'><img src="tree.png" width="300" height="230"></div1>
+    <div1 id='owl'><img src="owl.png" width="60" height="60"></div1>
+    <div1 id='acorn'><img src="acorn.png" width="20" height="20"></div1>
+    <div1 id='squirrel'><img src="squirrel.png" width="60" height="60"></div1>
+    <div1 id='cow'><img src="cow.png" width="120" height="120"></div1>
+    <div1 id='grass'><img src="grass.png" width="80" height="80"></div1>
+    <div1 id='eagle'><img src="eagle.png" width="100" height="100"></div1>
+    <div1 id='buttonPo'><button id='button' type="button" onclick="A1()">動畫</button>
+                        <button id='button1' type="button" onclick="javascript:window.location.reload()">刷新</button></div1>
+
+  </div>
+</body>
+
+</html>
