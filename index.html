@@ -53,7 +53,7 @@
         top: 450px;
         left:300px;
       }
-      #cow {
+      #horse {
         position: fixed;
         top: 420px;
         left:600px;
@@ -68,6 +68,30 @@
         top: 600px;
         left:50px;
       }
+      #buttonPo1 {
+        position: fixed;
+        top: 600px;
+        left:90px;
+      }
+      #aboutPo1 {
+        position: fixed;
+        top: 50px;
+        left:50px;
+      }
+      .example1 {
+    background-image:  url(2.png);
+    background-position: left top;
+    background-repeat: repeat;
+      height: 20px;
+      width: 600px;
+      }
+      .example2 {
+        height: 100px;
+        width: 600px;
+      }
+      #body {
+          background-color: #CCFF99;
+        }
     </style>
     <script>
 
@@ -75,26 +99,31 @@
       $(document).ready(function() {$('#cloud').hide();})
       $(document).ready(function() {$('#squirrel').hide();})
       $(document).ready(function() {$('#eagle').hide();})
-      $(document).ready(function() {$('#cow').hide();})
+      $(document).ready(function() {$('#horse').hide();})
       $(document).ready(function() {$('#button1').hide();})
+      $(document).ready(function() {$('div2').fadeToggle(1);})
       function A1(){
         $('#moon').fadeTo(4000,0);
-        $('#sun').show("slide",{distance:350},5000);
+        $('#sun').show("slide",{distance:350},4000);
         $('#cloud').fadeToggle(5000);
         $('#star').fadeTo(1500,0);
         $('#owl').hide("shake", {times: 4, distance: 5},1500);
-        $('#cow').slideDown(1000).animate({left:"450px"},3000);
+        $('#horse').slideDown(1000).animate({left:"450px"},3000);
         $('#eagle').fadeIn(10).animate({top:"260px",left:"410px"},1000,'easeInQuart').animate({top:"150px",left:"210px"},1500,'easeInQuart').fadeOut(3000);
         $('#acorn').toggle(1000);
-        $('#squirrel').slideToggle().slideUp(100);
+        $('#squirrel').slideToggle().animate({left:"200px"},1500).animate({top:"345px"},900,'easeInOutCirc').slideUp(100);
         $('#button').slideUp(0);
         $('#button1').slideDown(1000);
+      }
+      function A2(){
+          $('#x1').fadeToggle();
+          $('div2').fadeToggle();
       }
     </script>
 </head>
 
-<body>
-  <div>
+<body id='body'>
+  <div id='x1'>
     <div1 id='sun'><img src="sun.png" width="150" height="150"></div1>
     <div1 id='moon'><img src="moon.png" width="150" height="150"></div1>
     <div1 id='star'><img src="star.png" width="50" height="50"></div1>
@@ -103,13 +132,39 @@
     <div1 id='owl'><img src="owl.png" width="60" height="60"></div1>
     <div1 id='acorn'><img src="acorn.png" width="20" height="20"></div1>
     <div1 id='squirrel'><img src="squirrel.png" width="60" height="60"></div1>
-    <div1 id='cow'><img src="cow.png" width="120" height="120"></div1>
+    <div1 id='horse'><img src="horse.png" width="120" height="120"></div1>
     <div1 id='grass'><img src="grass.png" width="80" height="80"></div1>
     <div1 id='eagle'><img src="eagle.png" width="100" height="100"></div1>
     <div1 id='buttonPo'><button id='button' type="button" onclick="A1()">動畫</button>
                         <button id='button1' type="button" onclick="javascript:window.location.reload()">刷新</button></div1>
-
   </div>
+    <div1 id=buttonPo1><button id='button' type="button" onclick="A2()">關於</button></div1>
+    <div2 id='aboutPo1'>
+        <div id='ac'>
+          <h3 class="example1">關於</h3>
+          <div id="accordion" class="example2">
+          <p>這是一部短篇動畫，在一座森林裏面，日復一日的日常~</p>
+        </div>
+        <h3 class="example1">劇情</h3>
+        <div id="dialog" class="example2">
+          <p>日出~一天的開始，貓頭鷹抖了一抖身體，休息去了。</br>
+            小松鼠發現了一個榛果,他必須冒着老鷹的威脅來尋找食物~</br>
+            小馬悠閒的散步，在這裏，它沒有找不到食物的問題，因爲這是一座豐饒的森林~</br>
+          </p>
+        </div>
+        <h3 class="example1">圖片來源</h3>
+        <div id="tooltip" class="example2">
+          <p>網路上的ICON圖</p>
+        </div>
+      </div2>
+        <script>
+        $(function(){
+          $('#ac').accordion({
+            active:0
+          });
+        });
+        </script>
+    </x1>
 </body>
 
 </html>
